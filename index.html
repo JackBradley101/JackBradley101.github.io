@@ -1,0 +1,71 @@
+---
+layout: home_no_header
+title: Jack Bradley
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-photo">
+      {% if site.avatar %}
+      <img src="{{ site.avatar }}" alt="{{ site.name }}" />
+      {% endif %}
+    </div>
+
+    <div class="hero-text">
+      <h1>{{ site.name }}</h1>
+
+      {% if site.description %}
+      <p>{{ site.description }}</p>
+      {% endif %}
+
+      <div class="hero-links">
+        {% if site.footer-links.email %}
+        <a href="mailto:{{ site.footer-links.email }}" class="hero-link">Email</a>
+        {% endif %}
+        {% if site.footer-links.github %}
+        <a href="https://github.com/{{ site.footer-links.github }}" class="hero-link" target="_blank">GitHub</a>
+        {% endif %}
+        {% if site.footer-links.linkedin %}
+        <a href="https://linkedin.com/in/{{ site.footer-links.linkedin }}" class="hero-link" target="_blank">LinkedIn</a>
+        {% endif %}
+        <a href="/assets/resume.pdf" class="hero-link" target="_blank">Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects">
+  <h2>Posts</h2>
+
+  {% if site.posts.size == 0 %}
+  <p class="no-posts">No projects yet. Check back soon!</p>
+  {% else %}
+  <div class="projects-list">
+    {% for post in site.posts %}
+      <article class="project-item">
+        <a class="project-image" href="{{ post.url | relative_url }}">
+          {% if post.image %}
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" />
+          {% endif %}
+        </a>
+
+        <div class="project-content">
+          <h3 class="project-title">
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title }}
+            </a>
+          </h3>
+
+          <p class="project-date">
+            {{ post.date | date: "%B %d, %Y" }}
+          </p>
+
+          <p class="project-excerpt">
+            {{ post.excerpt | strip_html | truncate: 180 }}
+          </p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>

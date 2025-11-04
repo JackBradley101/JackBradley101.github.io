@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+
+    {% include meta.html %}
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  </head>
+
+  <body>
+    {% include svg-icons.html %}
+    
+    <header class="site-header">
+      <div class="container">
+        <div class="header-wrap">
+          <a class="site-title" href="{{ site.baseurl }}/">{{ site.name }}</a>
+          
+          <nav class="site-nav">
+            <a class="page-link" href="{{ site.baseurl }}/">Home</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div id="main" role="main" class="container">
+      {{ content }}
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          {% include svg-icons.html %}
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
