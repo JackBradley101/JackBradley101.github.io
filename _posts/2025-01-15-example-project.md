@@ -1,67 +1,53 @@
 ---
 layout: post
-title: "Example Project: Machine Learning Application"
-date: 2025-01-15
-tags: [machine learning, python, simulation]
-image: https://via.placeholder.com/800x400/667eea/ffffff?text=Your+Project+Image
+title: "Topology Optimized Front Bellcranks"
+date: 2024-05-12
+tags: [FUBC, Machining, FEA]
+image: /images/BELLCRANK/bellcrank-0.jpg
 ---
 
-This is an example blog post for one of your projects. Replace this content with your actual project details!
+Lightweight, stiff, and fast to manufacture — I redesigned our Formula UBC front bellcrank using parametric CAD, FEA, and topology optimization to cut mass while increasing stiffness and simplifying the assembly.
 
-## Project Overview
+<!--more-->
 
-Describe what your project is about. What problem does it solve? What technologies did you use?
+On our Formula UBC car, the front bellcrank links the pullrods to the dampers and sets the effective motion ratio of the front suspension. I redesigned it to be lighter, stiffer, and faster to manufacture.
 
-## Key Features
+![Topology-optimized bellcrank CAD](/images/BELLCRANK/bellcrank-0.jpg)
 
-- Feature 1: Description
-- Feature 2: Description
-- Feature 3: Description
+### Goals
 
-## Technical Details
+- **Cut mass** to reduce unsprung weight and improve responsiveness  
+- **Increase stiffness** so the linkage behaves like an ideal lever, not a spring  
+- **Simplify manufacturing** to save time and improve repeatability  
 
-Explain the technical aspects of your project. Include:
+### Design & Analysis
 
-- Technologies used
-- Architecture decisions
-- Challenges you faced
-- How you solved them
+- Rebuilt the bellcrank as a parametric model in **SolidWorks**  
+- Ran **FEA** to study stress and deflection under peak suspension loads  
+- Used **topology optimization** to guide the final geometry  
+- Simplified the bearing stack to reduce part count and improve load paths  
 
-## Results
+**Outcome (vs previous design):**
 
-Share the results of your project:
+- ~**20% mass reduction**  
+- ~**35% increase in stiffness** (from deflection comparisons in FEA)  
 
-![Project Screenshot](https://via.placeholder.com/800x400/764ba2/ffffff?text=Screenshot)
+![FEA and optimization results](/images/BELLCRANK/FBC-1.jpg)
 
-You can include images using the syntax above. Just replace the URL with your actual image path.
+### Manufacturing
 
-### Videos
+- **Bellcrank plates:**  
+  - **7075-T6 aluminum**, waterjet cut and honed to press onto the bearing assembly  
+- **Bearing assembly:**  
+  - Turned **6061 aluminum** components plus bearing + retaining ring  
+- **Chassis mount:**  
+  - Machined on a **4-axis CNC** to maintain pivot alignment and match the complex carbon monocoque surface  
 
-If you have videos, you can embed them like this:
+![Machined bellcrank assembly](/images/BELLCRANK/FBC-2.jpg)
 
-```html
-<video width="100%" controls>
-  <source src="/path/to/your/video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-```
+### Results & Takeaways
 
-## Code Examples
+- Achieved a **lighter, stiffer** linkage with about **30% less production time**  
+- Got end-to-end experience: CAD → FEA/optimization → machining → integration  
+- Learned how to balance **optimization** with manufacturability and assembly, and how small choices in the bearing stack and interfaces affect real-world stiffness and serviceability  
 
-You can include code snippets:
-
-```python
-def example_function():
-    """This is an example Python function"""
-    print("Hello from your project!")
-    return True
-```
-
-## Conclusion
-
-Wrap up your project description. What did you learn? What's next?
-
-## Links
-
-- [GitHub Repository](https://github.com/JackBradley101)
-- [Live Demo](#)
