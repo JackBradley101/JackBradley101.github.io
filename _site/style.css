@@ -2,6 +2,8 @@
 /* BASE RULES */
 /***************/
 
+@import url('https://cdn.jsdelivr.net/npm/computer-modern@0.1.2/cmu-serif.css');
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +16,7 @@ html {
 
 body {
   background: #0B132B;
-  font: 18px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font: 18px/1.6 'Computer Modern Serif', 'CMU Serif', Georgia, serif;
   color: #E0E7FF;
   line-height: 1.6;
 }
@@ -27,7 +29,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Computer Modern Serif', 'CMU Serif', Georgia, serif;
   color: #E0E7FF;
   font-weight: bold;
   line-height: 1.4;

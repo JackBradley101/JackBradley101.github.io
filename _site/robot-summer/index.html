@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Robot Summer 2025: Pet Rescue Bot – Jack Bradley</title>
+
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="Seven-week autonomous robot project featuring a 3D-printed chassis, custom R–Z–θ arm, and YOLOv11 vision system. Built entirely from scratch by a team of four for UBC’s Robot Summer competition. Iteration speed through additive manufacturing was the key advantage.
+
+" />
+<meta property="og:description" content="Seven-week autonomous robot project featuring a 3D-printed chassis, custom R–Z–θ arm, and YOLOv11 vision system. Built entirely from scratch by a team of four for UBC’s Robot Summer competition. Iteration speed through additive manufacturing was the key advantage.
+
+" />
+
+<meta name="author" content="Jack Bradley" />
+
+
+<meta property="og:title" content="Robot Summer 2025: Pet Rescue Bot" />
+<meta property="twitter:title" content="Robot Summer 2025: Pet Rescue Bot" />
+
+
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Jack Bradley - I'm Jack Bradley, a third-year Engineering Physics student at UBC who likes exploring the intersection of software, robotics, and simulation. I worked on manufacturing automation solutions on co-op at Zaber Technologies, built a vision-guided autonomous robot, and work on suspension and vehicle dynamics simulation as part of UBC's Formula SAE team. Lately I've been working on leveraging modern multibody simulation and machine learning techniques to create a suspension generator. This site is where I share my projects and ideas." href="/feed.xml" />
+  </head>
+
+  <body>
+    <svg style="display: none;">
+  <symbol id="icon-email" viewBox="0 0 24 24">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </symbol>
+  <symbol id="icon-twitter" viewBox="0 0 24 24">
+    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+  </symbol>
+</svg>
+
+    
+    <header class="site-header">
+      <div class="container">
+        <div class="header-wrap">
+          <a class="site-title" href="/">Jack Bradley</a>
+          
+          <nav class="site-nav">
+            <a class="page-link" href="/">Home</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Robot Summer 2025: Pet Rescue Bot</h1>
+
+  <div class="post-meta">
+    <span class="post-date">August 15, 2025</span>
+    
+    <div class="post-tags">
+      
+        <span class="tag">Robotics</span>
+      
+        <span class="tag">3D-Printing</span>
+      
+        <span class="tag">Computer-Vision</span>
+      
+        <span class="tag">ENPH-253</span>
+      
+    </div>
+    
+  </div>
+
+  <div class="entry">
+    <p>Seven-week autonomous robot project featuring a 3D-printed chassis, custom R–Z–θ arm, and YOLOv11 vision system. Built entirely from scratch by a team of four for UBC’s Robot Summer competition. Iteration speed through additive manufacturing was the key advantage.</p>
+
+<!--more-->
+
+<p>This summer I spent seven weeks in ENPH 253 (Robot Summer), a project-based course where teams of four build an autonomous robot from scratch for a themed competition. The 2025 theme was <strong>“Pet Rescue”</strong>: navigate a cluttered course, find plush animals, and get them to safety as fast and reliably as possible.</p>
+
+<p>Teams typically put in <strong>50–70 hours a week</strong>, and the final public competition is the exam.</p>
+
+<p><img src="/images/ROBOT/FinishedRobotTopView.JPEG" alt="Finished robot top view" />
+<em>Final robot with R–Z–θ arm and vision system</em></p>
+
+<p>Our team focused on two ideas:</p>
+
+<ul>
+  <li>Use <strong>3D printing for most large structures</strong> to maximize iteration and minimize time spent machining</li>
+  <li>Build an <strong>R–Z–θ arm</strong> that could reach quickly and reliably across a large workspace</li>
+</ul>
+
+<hr />
+
+<h2 id="design-philosophy-when-in-doubt-print-it-out">Design Philosophy: When in doubt, print it out</h2>
+
+<p>Most teams spent a large amount of time machining. I tried to turn as much of that time into testing:</p>
+
+<ul>
+  <li>Complex parts (like our sub-chassis) were <strong>3D printed</strong></li>
+  <li>Anything not printed was <strong>laser cut</strong> or <strong>waterjet cut</strong></li>
+  <li>We never touched a mill or lathe during the whole course</li>
+</ul>
+
+<p>This meant that if I wanted to try a new chassis idea, I could:</p>
+
+<ul>
+  <li>Make the change in SolidWorks in the afternoon</li>
+  <li>Start a print before leaving</li>
+  <li>Show up the next morning to a <strong>new sub-chassis</strong> ready to assemble</li>
+</ul>
+
+<p>That iteration speed let us spend our energy on:</p>
+
+<ul>
+  <li>Iterating geometry for stiffness, mounting points, and clearances</li>
+  <li>Simplifying assembly and maintenance</li>
+  <li>Making room for wiring and sensors</li>
+</ul>
+
+<p><img src="/images/ROBOT/3DPrintedRobotChassis.JPEG" alt="3D printed robot chassis" />
+<em>3D-printed sub-chassis with integrated mounting points</em></p>
+
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0;">
+  <img src="/images/ROBOT/FinishedRobotSide.JPEG" alt="Finished robot side view" style="width: 48%; min-width: 280px;" />
+  <img src="/images/ROBOT/FinishedRobotTopView.JPEG" alt="Finished robot top view" style="width: 48%; min-width: 280px;" />
+</div>
+
+<p><em>Left: Side view showing arm clearance. Right: Top view with electronics layout</em></p>
+
+<p>The final robot felt solid, but we reached that point with far more design iterations than if everything had been aluminum.</p>
+
+<hr />
+
+<h2 id="the-arm-rzθ-on-a-student-budget">The Arm: R–Z–θ on a Student Budget</h2>
+
+<p>My favorite part of the robot was the arm. The goal was a fast, robust manipulator that could sweep a wide area and grab plushies without needing perfect approach.</p>
+
+<h3 id="mechanism">Mechanism</h3>
+
+<p>The arm used an <strong>R–Z–θ</strong> layout:</p>
+
+<ul>
+  <li><strong>θ axis</strong> at the base for rotation</li>
+  <li><strong>Z axis</strong> for vertical motion</li>
+  <li><strong>R axis</strong> for radial extension</li>
+</ul>
+
+<p>Mechanically:</p>
+
+<ul>
+  <li>Two axes were <strong>belt driven</strong> by <strong>stepper motors</strong></li>
+  <li>One axis used a <strong>rack and pinion</strong></li>
+  <li>Linear rails, steppers, and belts came from a low-cost supplier in China</li>
+</ul>
+
+<p>The long lead time was worth it. We ended up with high quality rails and motors for very little money.</p>
+
+<p>I also scavenged and reused parts:</p>
+
+<ul>
+  <li>A bearing for the θ base from a <strong>scrap bin at Zaber</strong></li>
+  <li>One stepper from my team lead at Zaber (shoutout to James)</li>
+</ul>
+
+<p>All wiring on the arm was bundled in <strong>nylon cover</strong>:</p>
+
+<ul>
+  <li>Less chance of snagging on the moving arm</li>
+  <li>Easier inspection and repair</li>
+</ul>
+
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0;">
+  <img src="/images/ROBOT/RobotArmV1.JPEG" alt="Robot arm version 1" style="width: 48%; min-width: 280px;" />
+  <img src="/images/ROBOT/RobotArmV2.JPEG" alt="Robot arm version 2" style="width: 48%; min-width: 280px;" />
+</div>
+
+<p><em>Left: Early arm prototype. Right: Final arm design with cable management</em></p>
+
+<h3 id="control">Control</h3>
+
+<p>On the control side:</p>
+
+<ul>
+  <li>High level strategy and perception ran on a <strong>Raspberry Pi</strong></li>
+  <li>Low level motion control and line following ran on an <strong>ESP32</strong></li>
+  <li>The two boards communicated over <strong>UART</strong></li>
+</ul>
+
+<p>The arm used <strong>stepper motors with acceleration profiles</strong>:</p>
+
+<ul>
+  <li>Python GPIO controlled motion profiles</li>
+  <li>Smooth acceleration to avoid skipped steps</li>
+  <li>Basic interlocks to prevent hitting hard limits</li>
+</ul>
+
+<hr />
+
+<h2 id="vision-and-strategy">Vision and Strategy</h2>
+
+<p>Perception was one of the hardest parts of the competition.</p>
+
+<p>We used:</p>
+
+<ul>
+  <li>A <strong>YOLOv11</strong> model on the Raspberry Pi with an SSD</li>
+  <li>A dataset of roughly <strong>4,000 labeled images</strong> of the plushies</li>
+  <li>A <strong>PD controller</strong> on the Pi that used the plushie’s position in the frame to align the robot for grabbing (sub-one second homing)</li>
+</ul>
+
+<p>The high level behavior looked like:</p>
+
+<ol>
+  <li>Line follow and navigate until plushies appear in view</li>
+  <li>Use YOLO to detect a plushie and compute a target</li>
+  <li>Use PD alignment to position the arm</li>
+  <li>Command the arm to reach and grab</li>
+  <li>Place plushie in the basket and continue to the safe zone</li>
+</ol>
+
+<p>This stack combined computer vision, real time control, and coordination between two processors.</p>
+
+<hr />
+
+<h2 id="why-3d-printing-was-a-key-differentiator">Why 3D Printing Was a Key Differentiator</h2>
+
+<p>From an engineering point of view, one of our biggest wins was <strong>iteration speed</strong> enabled by 3D printing:</p>
+
+<ul>
+  <li>Major structural changes to the chassis or arm mounts took hours in CAD, not days in the shop</li>
+  <li>Overnight prints meant every day started with a new version to test</li>
+  <li>Laser cutting and waterjet use were reserved for parts where stiffness or precision really mattered</li>
+</ul>
+
+<p>Instead of sinking time into machining, we invested in:</p>
+
+<ul>
+  <li>Strategy and control</li>
+  <li>Tuning arm motion and robustness</li>
+  <li>Improving serviceability and cable routing</li>
+  <li>Tweaking perception and behavior</li>
+</ul>
+
+<p>Robot Summer is already intense. Treating 3D printing as the default for complex structures allowed us to push a more ambitious design without getting buried in the machine shop.</p>
+
+<hr />
+
+<h2 id="takeaways">Takeaways</h2>
+
+<p>A few key lessons from this project:</p>
+
+<ul>
+  <li><strong>Design for iteration, not perfection.</strong> If you can reprint a chassis overnight, you can explore more aggressive concepts.</li>
+  <li><strong>Good motion hardware is worth the sourcing effort.</strong> Affordable but decent rails and steppers were a huge step up from random scavenged parts.</li>
+  <li><strong>Cable management helps.</strong> Clean routing and nylon cover prevented a lot of avoidable failures.</li>
+  <li><strong>Specialization between processors is powerful.</strong> High level perception and strategy on the Pi, with deterministic low level control on the ESP32, worked very well.</li>
+</ul>
+
+<p>Robot Summer compresses a huge amount of learning into a short time. This robot, especially the arm and printed chassis, was a great demonstration of what you can build in a few weeks if you treat iteration speed as a core design constraint.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <a href="/" class="back-link">← Back to Posts</a>
+  </div>
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <svg style="display: none;">
+  <symbol id="icon-email" viewBox="0 0 24 24">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </symbol>
+  <symbol id="icon-twitter" viewBox="0 0 24 24">
+    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+  </symbol>
+</svg>
+
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

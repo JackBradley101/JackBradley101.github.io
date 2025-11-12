@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Topology Optimized Front Bellcranks – Jack Bradley</title>
+
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="On my first season on the Formula UBC team, I redesigned our front bellcrank using parametric CAD, FEA, and topology optimization to cut mass while increasing stiffness and simplifying the assembly.
+
+" />
+<meta property="og:description" content="On my first season on the Formula UBC team, I redesigned our front bellcrank using parametric CAD, FEA, and topology optimization to cut mass while increasing stiffness and simplifying the assembly.
+
+" />
+
+<meta name="author" content="Jack Bradley" />
+
+
+<meta property="og:title" content="Topology Optimized Front Bellcranks" />
+<meta property="twitter:title" content="Topology Optimized Front Bellcranks" />
+
+
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Jack Bradley - I'm Jack Bradley, a third-year Engineering Physics student at UBC who likes exploring the intersection of software, robotics, and simulation. I worked on manufacturing automation solutions on co-op at Zaber Technologies, built a vision-guided autonomous robot, and work on suspension and vehicle dynamics simulation as part of UBC's Formula SAE team. Lately I've been working on leveraging modern multibody simulation and machine learning techniques to create a suspension generator. This site is where I share my projects and ideas." href="/feed.xml" />
+  </head>
+
+  <body>
+    <svg style="display: none;">
+  <symbol id="icon-email" viewBox="0 0 24 24">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </symbol>
+  <symbol id="icon-twitter" viewBox="0 0 24 24">
+    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+  </symbol>
+</svg>
+
+    
+    <header class="site-header">
+      <div class="container">
+        <div class="header-wrap">
+          <a class="site-title" href="/">Jack Bradley</a>
+          
+          <nav class="site-nav">
+            <a class="page-link" href="/">Home</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Topology Optimized Front Bellcranks</h1>
+
+  <div class="post-meta">
+    <span class="post-date">May 12, 2024</span>
+    
+    <div class="post-tags">
+      
+        <span class="tag">FUBC</span>
+      
+        <span class="tag">Machining</span>
+      
+        <span class="tag">FEA</span>
+      
+    </div>
+    
+  </div>
+
+  <div class="entry">
+    <p>On my first season on the Formula UBC team, I redesigned our front bellcrank using parametric CAD, FEA, and topology optimization to cut mass while increasing stiffness and simplifying the assembly.</p>
+
+<!--more-->
+
+<p>On our Formula UBC car, the front bellcrank links the pullrods to the dampers and sets the effective motion ratio of the front suspension. I redesigned it to be lighter, stiffer, and faster to manufacture.</p>
+
+<p><img src="/images/BELLCRANK/bellcrank-0.jpg" alt="Topology-optimized bellcrank CAD" /></p>
+
+<h3 id="goals">Goals</h3>
+
+<ul>
+  <li><strong>Cut mass</strong> to reduce unsprung weight and improve responsiveness</li>
+  <li><strong>Increase stiffness</strong> so the linkage behaves like an ideal lever, not a spring</li>
+  <li><strong>Simplify manufacturing</strong> to save time and improve repeatability</li>
+</ul>
+
+<h3 id="design--analysis">Design &amp; Analysis</h3>
+
+<ul>
+  <li>Rebuilt the bellcrank as a parametric model in <strong>SolidWorks</strong></li>
+  <li>Ran <strong>FEA</strong> to study stress and deflection under peak suspension loads</li>
+  <li>Used <strong>topology optimization</strong> to guide the final geometry</li>
+  <li>Simplified the bearing stack to reduce part count and improve load paths</li>
+</ul>
+
+<p><strong>Outcome (vs previous design):</strong></p>
+
+<ul>
+  <li>~<strong>20% mass reduction</strong></li>
+  <li>~<strong>35% increase in stiffness</strong> (from deflection comparisons in FEA)</li>
+</ul>
+
+<p><img src="/images/BELLCRANK/FBC-1.jpg" alt="FEA and optimization results" /></p>
+
+<h3 id="manufacturing">Manufacturing</h3>
+
+<ul>
+  <li><strong>Bellcrank plates:</strong>
+    <ul>
+      <li><strong>7075-T6 aluminum</strong>, waterjet cut and honed to press onto the bearing assembly</li>
+    </ul>
+  </li>
+  <li><strong>Bearing assembly:</strong>
+    <ul>
+      <li>Turned <strong>6061 aluminum</strong> components plus bearing + retaining ring</li>
+    </ul>
+  </li>
+  <li><strong>Chassis mount:</strong>
+    <ul>
+      <li>Machined on a <strong>4-axis CNC</strong> to maintain pivot alignment and match the complex carbon monocoque surface</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/BELLCRANK/FBC-2.jpg" alt="Machined bellcrank assembly" /></p>
+
+<h3 id="results--takeaways">Results &amp; Takeaways</h3>
+
+<ul>
+  <li>Achieved a <strong>lighter, stiffer</strong> linkage with about <strong>30% less production time</strong></li>
+  <li>Got end-to-end experience: CAD → FEA/optimization → machining → integration</li>
+  <li>Learned how to balance <strong>optimization</strong> with manufacturability and assembly, and how small choices in the bearing stack and interfaces affect real-world stiffness and serviceability</li>
+</ul>
+
+
+  </div>
+
+  <div class="post-footer">
+    <a href="/" class="back-link">← Back to Posts</a>
+  </div>
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <svg style="display: none;">
+  <symbol id="icon-email" viewBox="0 0 24 24">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </symbol>
+  <symbol id="icon-twitter" viewBox="0 0 24 24">
+    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+  </symbol>
+</svg>
+
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

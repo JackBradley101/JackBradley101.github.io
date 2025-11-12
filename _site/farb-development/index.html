@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Front Anti-Roll Bar (FARB) Development – Jack Bradley</title>
+
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="Fast-adjustable blade-style anti-roll bar designed with multibody simulation and manufactured using 3D-printed soft jaws and waterjet fixturing. Enabled sub-30 second stiffness changes compared to 10–15 minutes with previous designs.
+
+" />
+<meta property="og:description" content="Fast-adjustable blade-style anti-roll bar designed with multibody simulation and manufactured using 3D-printed soft jaws and waterjet fixturing. Enabled sub-30 second stiffness changes compared to 10–15 minutes with previous designs.
+
+" />
+
+<meta name="author" content="Jack Bradley" />
+
+
+<meta property="og:title" content="Front Anti-Roll Bar (FARB) Development" />
+<meta property="twitter:title" content="Front Anti-Roll Bar (FARB) Development" />
+
+
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Jack Bradley - I'm Jack Bradley, a third-year Engineering Physics student at UBC who likes exploring the intersection of software, robotics, and simulation. I worked on manufacturing automation solutions on co-op at Zaber Technologies, built a vision-guided autonomous robot, and work on suspension and vehicle dynamics simulation as part of UBC's Formula SAE team. Lately I've been working on leveraging modern multibody simulation and machine learning techniques to create a suspension generator. This site is where I share my projects and ideas." href="/feed.xml" />
+  </head>
+
+  <body>
+    <svg style="display: none;">
+  <symbol id="icon-email" viewBox="0 0 24 24">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </symbol>
+  <symbol id="icon-twitter" viewBox="0 0 24 24">
+    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+  </symbol>
+</svg>
+
+    
+    <header class="site-header">
+      <div class="container">
+        <div class="header-wrap">
+          <a class="site-title" href="/">Jack Bradley</a>
+          
+          <nav class="site-nav">
+            <a class="page-link" href="/">Home</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Front Anti-Roll Bar (FARB) Development</h1>
+
+  <div class="post-meta">
+    <span class="post-date">April 20, 2024</span>
+    
+    <div class="post-tags">
+      
+        <span class="tag">FUBC</span>
+      
+        <span class="tag">Machining</span>
+      
+        <span class="tag">Simulation</span>
+      
+    </div>
+    
+  </div>
+
+  <div class="entry">
+    <p>Fast-adjustable blade-style anti-roll bar designed with multibody simulation and manufactured using 3D-printed soft jaws and waterjet fixturing. Enabled sub-30 second stiffness changes compared to 10–15 minutes with previous designs.</p>
+
+<!--more-->
+
+<p>Our Formula UBC car needed a front anti-roll bar that was easy to tune, lightweight, and predictable. I designed a <strong>blade-style, rapidly adjustable FARB</strong> so we could change roll stiffness in under 30 seconds instead of the 10–15 minutes it took with previous designs.</p>
+
+<p><img src="/images/FARB/farbOnCar.JPEG" alt="FARB installed on car" />
+<em>Finished FARB assembly installed on the car</em></p>
+
+<h3 id="goals">Goals</h3>
+
+<ul>
+  <li><strong>Fast adjustability</strong> so we could tune roll stiffness between sessions (or even between runs)</li>
+  <li><strong>Predictable, linear stiffness range</strong> matched to our overall roll-stiffness distribution targets</li>
+  <li><strong>Manufacturable on student-team equipment</strong>, while taking advantage of my co-op shop access at Zaber</li>
+</ul>
+
+<h3 id="design--analysis">Design &amp; Analysis</h3>
+
+<ul>
+  <li>Modeled the FARB (torsion bar, blades, and links) and suspension in a <strong>Simulink multibody model</strong></li>
+  <li>Used the model as a <strong>design calculator</strong> to:
+    <ul>
+      <li>Sweep bar diameters, blade geometries, and motion ratios</li>
+      <li>Target a stiffness range that worked with the rear bar and spring package</li>
+      <li>Maximize the linear region of operation</li>
+    </ul>
+  </li>
+  <li>Linked the simulation results back to CAD so geometry changes could be quickly re-evaluated</li>
+  <li>Indexed blade positions so each setting corresponded to a known, repeatable stiffness</li>
+</ul>
+
+<p><img src="/images/FARB/MultibodyModel.png" alt="Simulink multibody suspension model" style="max-width: 700px; width: 100%;" /></p>
+
+<p><em>Simulink multibody model used for stiffness calculations and geometry optimization</em></p>
+
+<h3 id="manufacturing">Manufacturing</h3>
+
+<p>A lot of the machining was only practical because of my <strong>access to the machine shop at Zaber</strong> during co-op, plus aggressive use of 3D-printed tooling:</p>
+
+<h4 id="bar-ends--blades">Bar ends &amp; blades</h4>
+
+<ul>
+  <li>Turned the bar ends from <strong>4130 steel</strong>, then:
+    <ul>
+      <li>Used <strong>3D-printed soft jaws</strong> to hold them accurately in the mill for <strong>mitering</strong> and secondary ops</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/FARB/MiteredBarEnd.JPEG" alt="Mitered bar end" />
+<em>Bar end after mitering operation</em></p>
+
+<ul>
+  <li>Machined the blades with a combination of:
+    <ul>
+      <li>Conventional fixturing and</li>
+      <li><strong>3D-printed soft jaws</strong> to mill the flat and tap the adjustment hole without distorting the part</li>
+    </ul>
+  </li>
+</ul>
+
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0;">
+  <img src="/images/FARB/BladeWorkholdBetter.JPEG" alt="Blade workholding setup" style="width: 48%; min-width: 280px;" />
+  <img src="/images/FARB/BladeFinalOpWithSoftJaw.JPG" alt="Blade final operation with soft jaw" style="width: 48%; min-width: 280px;" />
+</div>
+
+<p><em>Left: Blade workholding with 3D-printed soft jaws. Right: Final milling operation</em></p>
+
+<h4 id="torsion-bar--welding-setup">Torsion bar &amp; welding setup</h4>
+
+<ul>
+  <li>Turned down the torsion bar to the required diameter/profile</li>
+  <li><strong>Waterjet-cut a plate</strong> to match the bar-end profile and used it as a <strong>welding jig</strong>:
+    <ul>
+      <li>Held the bar ends at the correct angle and spacing</li>
+      <li>Kept everything aligned during welding to minimize runout and rework</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/FARB/WaterjetBarendWeldingJig.JPEG" alt="Waterjet welding jig" />
+<em>Waterjet-cut welding jig to hold bar ends at precise angles</em></p>
+
+<p><img src="/images/FARB/WeldedBarEnd.JPEG" alt="Welded bar end" />
+<em>Completed weld between torsion bar and blade mount</em></p>
+
+<h4 id="assembly--indexing">Assembly &amp; indexing</h4>
+
+<ul>
+  <li>Integrated spring-loaded detents so blade angle (and thus stiffness) could be adjusted quickly</li>
+  <li>Ensured the mechanism could be reached and adjusted easily with the bodywork on</li>
+</ul>
+
+<p><img src="/images/FARB/BladeOnCarTopView.JPEG" alt="Blade on car top view" />
+<em>Adjustable blade mechanism visible with bodywork on</em></p>
+
+<h3 id="results--takeaways">Results &amp; Takeaways</h3>
+
+<ul>
+  <li><strong>Sub-30 second stiffness changes</strong>, compared to ~10–15 minutes with previous FARB designs</li>
+  <li>A <strong>simulation-backed stiffness range</strong>, making setup decisions more quantitative and less guesswork</li>
+  <li>Practical experience combining:
+    <ul>
+      <li><strong>Multibody simulation</strong> (Simulink) as a design tool</li>
+      <li><strong>3D-printed soft jaws</strong> and waterjet jigs to do precise machining on irregular parts</li>
+    </ul>
+  </li>
+  <li>Reinforced how powerful it is to close the loop between <strong>simulation, fixturing, and on-car usability</strong>, especially for components that directly affect vehicle balance and driver confidence</li>
+</ul>
+
+<p><img src="/images/FARB/farbCarWithLivery.JPEG" alt="Car with livery showing FARB" />
+<em>Complete car with the finished FARB system</em></p>
+
+  </div>
+
+  <div class="post-footer">
+    <a href="/" class="back-link">← Back to Posts</a>
+  </div>
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <svg style="display: none;">
+  <symbol id="icon-email" viewBox="0 0 24 24">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </symbol>
+  <symbol id="icon-twitter" viewBox="0 0 24 24">
+    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+  </symbol>
+</svg>
+
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
