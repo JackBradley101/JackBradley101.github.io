@@ -327,6 +327,21 @@ img {
   color: #A5B4FC;
 }
 
+.read-more {
+  display: inline-block;
+  color: #5BC0BE;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.read-more:hover {
+  color: #7DD3D0;
+  text-decoration: underline;
+}
+
 /***************/
 /* POST PAGE */
 /***************/

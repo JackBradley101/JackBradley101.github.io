@@ -63,6 +63,7 @@ title: Jack Bradley
           <p class="project-excerpt">
             {{ post.excerpt | strip_html | truncate: 180 }}
           </p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
         </div>
       </article>
     {% endfor %}
