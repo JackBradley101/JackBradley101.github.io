@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Front Anti-Roll Bar (FARB) Development"
-date: 2024-04-20
+date: 2025-05-20
 tags: [FUBC, Machining, Simulation]
 image: /images/FARB/farbOnCar.JPEG
 ---
