@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Topology Optimized Front Bellcranks"
+title: "Topology Optimized Bellcranks"
 date: 2024-05-12
 tags: [FUBC, Machining, FEA]
 image: /images/BELLCRANK/bellcrank-0.jpg
@@ -17,8 +17,8 @@ On our Formula UBC car, the front bellcrank links the pullrods to the dampers an
 ### Goals
 
 - **Cut mass** to reduce unsprung weight and improve responsiveness  
-- **Increase stiffness** so the linkage behaves like an ideal lever, not a spring  
-- **Simplify manufacturing** to save time and improve repeatability  
+- **Increase stiffness** so the linkage behaves like an lever, not a spring  
+- **Simplify manufacturing** to save time and minimize points of failure  
 
 ### Design & Analysis
 
@@ -49,5 +49,5 @@ On our Formula UBC car, the front bellcrank links the pullrods to the dampers an
 
 - Achieved a **lighter, stiffer** linkage with about **30% less production time**  
 - Got end-to-end experience: CAD → FEA/optimization → machining → integration  
-- Learned how to balance **optimization** with manufacturability and assembly, and how small choices in the bearing stack and interfaces affect real-world stiffness and serviceability  
+- Learned how to balance **optimization** with manufacturability and assembly, and how small choices in the bearing stack and interfaces affect stiffness and reliability  
 

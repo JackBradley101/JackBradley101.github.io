@@ -80,10 +80,10 @@ The long lead time was worth it. We ended up with high quality rails and motors 
 
 I also scavenged and reused parts:
 
-* A bearing for the θ base from a **scrap bin at Zaber**  
+* A bearing for the θ base from a scrap bin at Zaber
 * One stepper from my team lead at Zaber (shoutout to James)
 
-All wiring on the arm was bundled in **nylon cover**:
+All wiring on the arm was bundled in nylon cover:
 
 * Less chance of snagging on the moving arm  
 * Easier inspection and repair  
@@ -107,7 +107,7 @@ The arm used **stepper motors with acceleration profiles**:
 
 * Python GPIO controlled motion profiles  
 * Smooth acceleration to avoid skipped steps  
-* Basic interlocks to prevent hitting hard limits
+* Hall effect sensors and limit switches allowed open loop control
 
 ---
 
@@ -156,9 +156,9 @@ Robot Summer is already intense. Treating 3D printing as the default for complex
 
 A few key lessons from this project:
 
-* **Design for iteration, not perfection.** If you can reprint a chassis overnight, you can explore more aggressive concepts.  
-* **Good motion hardware is worth the sourcing effort.** Affordable but decent rails and steppers were a huge step up from random scavenged parts.  
-* **Cable management helps.** Clean routing and nylon cover prevented a lot of avoidable failures.  
+* **Design for iteration, not perfection.** Commiting too heavily in one direction limits how much you can explore the design space.  
+* **Good motion hardware is worth the sourcing effort.** Buying certain precision machined components allowed us to loosen tolerances on parts we fabricated. 
+* **Cable management is important.** Thinking ahead about routing wires allows you to test more aggressively without worry.  
 * **Specialization between processors is powerful.** High level perception and strategy on the Pi, with deterministic low level control on the ESP32, worked very well.
 
-Robot Summer compresses a huge amount of learning into a short time. This robot, especially the arm and printed chassis, was a great demonstration of what you can build in a few weeks if you treat iteration speed as a core design constraint.
+My teammates Avi Guha, Kazu Nakane, and Ryan Mahinpey spent countless hours designing, building, and testing this robot. I'm proud of what we built and grateful to have worked with such a talented group of people.
