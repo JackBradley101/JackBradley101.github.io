@@ -162,74 +162,64 @@ img {
 /* HERO SECTION */
 /***************/
 
-.hero {
-  padding: 4rem 1.5rem;
-  background: linear-gradient(145deg, #0B132B, #1C2541);
+.hero-boids {
+  position: relative;
+  height: 80vh;
+  min-height: 400px;
+  max-height: 700px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #6BB5AD, #7EC8C8, #6BB5AD);
 }
 
-.hero-inner {
-  max-width: 960px;
-  margin: 0 auto;
+#boids-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
+  justify-content: center;
+  height: 100%;
+  pointer-events: none;
 }
 
-/* Desktop: bio left, photo right */
-.hero-photo {
-  order: 2;
-  flex-shrink: 0;
-}
-
-.hero-text {
-  order: 1;
-  flex: 1;
-}
-
-.hero-text h1 {
-  margin: 0 0 0.75rem 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #E0E7FF;
-}
-
-.hero-text p {
+.hero-overlay h1 {
   margin: 0 0 1.5rem 0;
-  line-height: 1.6;
-  font-size: 1rem;
-  color: #A5B4FC;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1a3a4a;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.6);
 }
 
 .hero-links {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+  justify-content: center;
+  pointer-events: auto;
 }
 
 .hero-link {
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
-  border: 1px solid #2E3A59;
-  background: #1C2541;
+  border: 1px solid rgba(26, 58, 74, 0.3);
+  background: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.9rem;
-  color: #E0E7FF;
+  color: #1a3a4a;
   transition: all 0.2s;
 }
 
 .hero-link:hover {
-  background: #5BC0BE;
-  border-color: #5BC0BE;
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #1a3a4a;
   color: #0B132B;
-}
-
-.hero-photo img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #5BC0BE;
 }
 
 /***************/
@@ -448,27 +438,13 @@ img {
 
 /* Hero section mobile */
 @media (max-width: 768px) {
-  .hero {
-    padding: 2rem 1rem;
+  .hero-boids {
+    height: 60vh;
+    min-height: 300px;
   }
 
-  .hero-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .hero-photo,
-  .hero-text {
-    order: initial;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-links {
-    justify-content: center;
+  .hero-overlay h1 {
+    font-size: 2.2rem;
   }
 }
 

@@ -3,33 +3,21 @@ layout: home_no_header
 title: Jack Bradley
 ---
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-photo">
-      {% if site.avatar %}
-      <img src="{{ site.avatar }}" alt="{{ site.name }}" />
+<section class="hero-boids">
+  <canvas id="boids-canvas"></canvas>
+  <div class="hero-overlay">
+    <h1 id="boids-obstacle">{{ site.name }}</h1>
+    <div class="hero-links">
+      {% if site.footer-links.email %}
+      <a href="mailto:{{ site.footer-links.email }}" class="hero-link">Email</a>
       {% endif %}
-    </div>
-
-    <div class="hero-text">
-      <h1>{{ site.name }}</h1>
-
-      {% if site.description %}
-      <p>{{ site.description }}</p>
+      {% if site.footer-links.github %}
+      <a href="https://github.com/{{ site.footer-links.github }}" class="hero-link" target="_blank">GitHub</a>
       {% endif %}
-
-      <div class="hero-links">
-        {% if site.footer-links.email %}
-        <a href="mailto:{{ site.footer-links.email }}" class="hero-link">Email</a>
-        {% endif %}
-        {% if site.footer-links.github %}
-        <a href="https://github.com/{{ site.footer-links.github }}" class="hero-link" target="_blank">GitHub</a>
-        {% endif %}
-        {% if site.footer-links.linkedin %}
-        <a href="https://linkedin.com/in/{{ site.footer-links.linkedin }}" class="hero-link" target="_blank">LinkedIn</a>
-        {% endif %}
-        <a href="/assets/resume.pdf" class="hero-link" target="_blank">Resume</a>
-      </div>
+      {% if site.footer-links.linkedin %}
+      <a href="https://linkedin.com/in/{{ site.footer-links.linkedin }}" class="hero-link" target="_blank">LinkedIn</a>
+      {% endif %}
+      <a href="/assets/resume.pdf" class="hero-link" target="_blank">Resume</a>
     </div>
   </div>
 </section>
@@ -70,3 +58,5 @@ title: Jack Bradley
   </div>
   {% endif %}
 </section>
+
+<script src="{{ '/assets/boids.js' | relative_url }}" defer></script>
